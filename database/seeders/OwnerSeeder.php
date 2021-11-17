@@ -17,7 +17,7 @@ class OwnerSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('owners')->insert([
-                "login" => Str::random(10)
+                "login" => 'owner_'.Str::random(10)
             ]);
         }
     }

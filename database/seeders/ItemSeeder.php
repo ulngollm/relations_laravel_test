@@ -16,7 +16,7 @@ class ItemSeeder extends Seeder
     public function run()
     {
         for ($i=0; $i < 10; $i++) {
-            $name = 'item'. Str::random(10);
+            $name = 'item_'. Str::random(10);
             DB::table('items')->insert([
                 'name'=> $name,
                 'category_id'=>random_int(1,10)

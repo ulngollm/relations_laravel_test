@@ -17,7 +17,7 @@ class AdapterSeeder extends Seeder
     {
         for ($i=0; $i < 10 ; $i++) {
             DB::table('adapters')->insert([
-                'name'=>Str::random(10),
+                'name'=>'adapter_'.Str::random(10),
                 'item_id'=>$i+1
             ]);
         }
