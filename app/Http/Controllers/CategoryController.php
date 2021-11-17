@@ -14,6 +14,11 @@ class CategoryController extends Controller
 
     public function getOne($id)
     {
+        return Category::find($id);
+    }
+
+    public function getItemsOfOne($id)
+    {
         return Category::find($id)->items;
     }
 

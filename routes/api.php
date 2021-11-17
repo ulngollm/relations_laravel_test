@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdapterController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OwnerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +20,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/item', [ItemController::class, 'getAll']);
 Route::post('/item', [ItemController::class, 'add']);
 Route::get('/item/{id}', [ItemController::class, 'getOne']);
+Route::get('/item/{id}/adapter', [ItemController::class, 'getAdapterForOne']);
+Route::get('/item/{id}/owner', [ItemController::class, 'getItemOwners']);
+
 
 Route::get('/category', [CategoryController::class, 'getAll']);
 Route::post('/category', [CategoryController::class, 'add']);
 Route::get('/category/{id}', [CategoryController::class, 'getOne']);
+Route::get('/category/{id}/item', [CategoryController::class, 'getItemsOfOne']);
+
 
 
 Route::get('/adapter', [AdapterController::class, 'getAll']);
 Route::post('/adapter', [AdapterController::class, 'add']);
 Route::get('/adapter/{id}', [AdapterController::class, 'getOne']);
+
+Route::get('/owner', [OwnerController::class, 'getAll']);
+Route::get('/owner/{id}', [OwnerController::class, 'getOne']);
+Route::get('/owner/{id}/item', [OwnerController::class, 'getItemsOfOne']);
 
