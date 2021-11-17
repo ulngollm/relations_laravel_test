@@ -18,4 +18,8 @@ class Item extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+
+    public function owners(){
+        return $this->belongsToMany(Owner::class);
+    }
 }

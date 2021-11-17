@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Owner;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            ItemSeeder::class,
+            CategorySeeder::class,
+            AdapterSeeder::class,
+            OwnerSeeder::class,
+            ItemOwnerSeeder::class
+        ]);
     }
 }
