@@ -16,7 +16,8 @@ class CreateAdaptersTable extends Migration
         Schema::create('adapters', function (Blueprint $table) {
             $table->tinyIncrements('id');
             $table->string('name', 25);
-            $table->tinyInteger('item_id');
+            $table->tinyInteger('item_id')->unsigned();
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
         });
     }
 

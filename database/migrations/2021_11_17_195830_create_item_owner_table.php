@@ -15,8 +15,10 @@ class CreateItemOwnerTable extends Migration
     {
         Schema::create('item_owner', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('item_id');
-            $table->tinyInteger('owner_id');
+            $table->tinyInteger('item_id')->unsigned();
+            $table->tinyInteger('owner_id')->unsigned();
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+            $table->foreign('owner_id')->references('id')->on('owners')->onDelete('cascade');
         });
     }
 
