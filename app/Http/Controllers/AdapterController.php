@@ -14,8 +14,10 @@ class AdapterController extends Controller
 
     public function getOne($id)
     {
-        // делает ли обращение к связанной таблице еще 1 запрос к бд?
-        // если да, то лучше join
+        return Adapter::find($id);
+    }
+    public function getAdapterItem($id)
+    {
         return Adapter::find($id)->item;
     }
 

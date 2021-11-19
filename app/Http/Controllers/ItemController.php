@@ -34,4 +34,10 @@ class ItemController extends Controller
         $item->save();
         return response('OK');
     }
+
+    public function delete($id){
+        $item = Item::find($id);
+        $item->delete();
+        return response('OK');
+    }
 }
